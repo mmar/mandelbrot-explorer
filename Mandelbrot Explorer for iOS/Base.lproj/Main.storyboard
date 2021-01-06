@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mandelbrot_Explorer_for_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="kW8-KI-nrG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MSu-Vu-AAQ" appends="YES" id="lKy-Fb-0Qj"/>
+                                    <outletCollection property="gestureRecognizers" destination="cV5-h2-Ecx" appends="YES" id="ajv-Hx-in1"/>
+                                </connections>
+                            </mtkView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kW8-KI-nrG" secondAttribute="trailing" id="61D-rz-gom"/>
+                            <constraint firstItem="kW8-KI-nrG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="B9S-Gr-RtL"/>
+                            <constraint firstAttribute="bottom" secondItem="kW8-KI-nrG" secondAttribute="bottom" id="eBb-aI-Tx6"/>
+                            <constraint firstItem="kW8-KI-nrG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ha9-eg-H7A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="renderer" destination="l2h-5I-YPe" id="73c-ac-Ydm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="l2h-5I-YPe" customClass="MandelbrotRenderer" customModule="Mandelbrot_Explorer_for_iOS" customModuleProvider="target">
+                    <connections>
+                        <outlet property="metalView" destination="kW8-KI-nrG" id="Fc3-hh-6Bt"/>
+                    </connections>
+                </customObject>
+                <pinchGestureRecognizer cancelsTouchesInView="NO" id="MSu-Vu-AAQ">
+                    <connections>
+                        <action selector="zoomIn:" destination="BYZ-38-t0r" id="Y0p-F4-toz"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer cancelsTouchesInView="NO" minimumNumberOfTouches="1" maximumNumberOfTouches="2" id="cV5-h2-Ecx">
+                    <connections>
+                        <action selector="pan:" destination="BYZ-38-t0r" id="7TY-eE-VbM"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>
