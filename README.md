@@ -2,6 +2,8 @@
 
 A simple Mandelbrot Set exploration app using Metal for macOS and iOS/iPadOS.
 
+![macOS Window](screenshots/mac_small.png)
+
 This project is still a work in progress, with some obvious features still missing. Also, tvOS
 supported may be added in the future.
 
